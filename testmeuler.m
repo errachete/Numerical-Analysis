@@ -5,5 +5,5 @@
 % los resultados
 
 datos
-[t,x] = meuler(f, intervalo, x0, 10000);
+[t,x] = meuler(f, intervalo, x0, N);
 graficas
