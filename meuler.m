@@ -22,7 +22,7 @@ function [t,x] = meuler(f, intervalo, x0, N)
 %  x: matriz de ordenadas de la solución aproximada de tipo (N+1,n)
 
 h = (intervalo(2) - intervalo(1)) / N;
-t = [intervalo(1):h:intervalo(2)];
+t = intervalo(1):h:intervalo(2);
 x(:,1) = x0;
 for i = 1:N
     x(:,i+1) = x(:,i) + h * f(t(i),x(:,i));
