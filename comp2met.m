@@ -6,11 +6,11 @@ function comp2met(met1, met2, prob)
 %  x(t0)=x0
 % con x0 en R^n, mediante los dos métodos que se le pasan por parámetros,
 % y respresenta:
-%  La solución obtenida por el primer método
+%  La solución obtenida por ambos métodos
 %  La diferencia entre las soluciones obtenidas por ámbos métodos
-%  La trayectoria obtenida por el primer método (sólo si la dimensión es 2
+%  La trayectoria obtenida por ambos métodos (sólo si la dimensión es 2
 %  o 3)
-%  El máximmo de la diferencia entre las soluciones obtenidas por ambos
+%  El máximo de la diferencia entre las soluciones obtenidas por ambos
 %  métodos  
 %
 % ENTRADA:
@@ -30,10 +30,13 @@ colors = ['r' 'g' 'b'];
 figure(1)
 for i = 1:dim
     subplot(dim,1,i)
-    plot(t1,x1(:,i),colors(i))
+    plot(t1,x1(:,i),colors(1))
+    hold on
+    plot(t2,x2(:,i),colors(2))
     s = sprintf('Coordenada %i de la solución', i);
     title(s)
 end
+hold off
 
 pause(2)
 dif = x1-x2;
@@ -49,13 +52,18 @@ if dim == 2
     pause(2)
     figure(3)
     plot(x1(:,1),x1(:,2))
+    hold on
+    plot(x2(:,1),x2(:,2))
     title('Trayectoria de la solución')
 elseif dim == 3
     pause(2)
     figure(3)
     plot3(x1(:,1),x1(:,2),x1(:,3))
+    hold on
+    plot3(x2(:,1),x2(:,2),x2(:,3))
     title('Trayectoria de la solución')
 end
+hold off
 
 pause(2)
 figure(4)
@@ -66,6 +74,6 @@ for i = 1:dim
     legend(s)
     title('Máximo de la diferencia entre soluciones')
 end 
-
+hold off
 end
 

@@ -1,18 +1,16 @@
-%% Comparador de un método con la función ode45
+%% Comparador de un método con la solución exacta
 
-function comp2ode45(met,  prob)
-% La función comp2ode45 resuelve un problema de valor inicial de la forma
+function comp2solexac(met, prob)
+% La función comp2solexac resuelve un problema de valor inicial de la forma
 %  x'=f(t,x) en [t0,Y]
 %  x(t0)=x0
-% con x0 en R^n, mediante el método que se le pasa por parámetro, y 
-% respresenta:
-%  La solución obtenida por el método y por la función ode45
-%  La diferencia entre las soluciones obtenidas por el método y la función
-%  ode45
-%  La trayectoria obtenida por el método y por la función ode45 (sólo si 
-%  la dimensión es 2 o 3)
-%  El máximmo de la diferencia entre la solución obtenida por el método y
-%  la obtenida por la función ode45
+% con x0 en R^n, mediante el método que se le pasa por parámetro,
+% y respresenta:
+%  La solución obtenida por el método y la solución exacta
+%  La diferencia entre la solución obtenida y la solución exacta
+%  La trayectoria de la solución obtenida por el método y la exacta (sólo 
+%  si la dimensión es 2 o 3)
+%  El máximmo de la diferencia entre la solución obtenida y la exacta
 %
 % ENTRADA:
 %  met: método con el que se pretende resolver el problema
@@ -23,7 +21,7 @@ function comp2ode45(met,  prob)
 
 datos
 [t1,x1] = met(f, intervalo, x0, N);
-[t2,x2] = ode45(f,[intervalo(1):(intervalo(2)-intervalo(1))/N:intervalo(2)],x0);
+x2 = sol_ex(t1);
 
 dim = size(x1,2);
 colors = ['r' 'g' 'b'];
@@ -32,7 +30,7 @@ for i = 1:dim
     subplot(dim,1,i)
     plot(t1,x1(:,i),colors(1))
     hold on
-    plot(t2,x2(:,i),colors(2))
+    plot(t1,x2(:,i),colors(2))
     s = sprintf('Coordenada %i de la solución', i);
     title(s)
 end
@@ -76,3 +74,6 @@ for i = 1:dim
 end 
 
 end
+
+
+
