@@ -1,7 +1,7 @@
 %% Test para un método en general
 
 function [t,x] = testmet(met, prob)
-% La funció testmet resuelve un problema de valor inicial de la forma
+% La función testmet resuelve un problema de valor inicial de la forma
 %  x'=f(t,x) en [t0,Y]
 %  x(t0)=x0
 % con x0 en R^n, mediante el método que se le pasa por parámetro.

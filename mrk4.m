@@ -1,7 +1,7 @@
 %% Método de Runge-Kutta de orden 4
 
 function [t,x] = mrk4(f, intervalo, x0, N)
-% La funció mrk3 resuelve un problema de valor inicial de la forma
+% La función mrk3 resuelve un problema de valor inicial de la forma
 %  x'=f(t,x) en [t0,Y]
 %  x(t0)=x0
 % con x0 en R^n, mediante el método de Runge-Kutta de orden 4.

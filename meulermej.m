@@ -1,7 +1,7 @@
 %% Método de Euler mejorado
 
 function [t,x] = meulermej(f, intervalo, x0, N)
-% La funció meulermej resuelve un problema de valor inicial de la forma
+% La función meulermej resuelve un problema de valor inicial de la forma
 %  x'=f(t,x) en [t0,Y]
 %  x(t0)=x0
 % con x0 en R^n, mediante el método de Euler mejorado.

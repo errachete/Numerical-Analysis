@@ -1,7 +1,7 @@
 %% Método del Punto Medio
 
 function [t,x] = mpuntomedio(f, intervalo, x0, N)
-% La funció mpuntomedio resuelve un problema de valor inicial de la forma
+% La función mpuntomedio resuelve un problema de valor inicial de la forma
 %  x'=f(t,x) en [t0,Y]
 %  x(t0)=x0
 % con x0 en R^n, mediante el método del punto medio utilizando el método
