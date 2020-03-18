@@ -1,11 +1,11 @@
 %% Método de Adams-Bashforth de 2 pasos
 
 function [t,x] = mab2(f, intervalo, x0, N)
-% La funció mab2 resuelve un problema de valor inicial de la forma
+% La función mab2 resuelve un problema de valor inicial de la forma
 %  x'=f(t,x) en [t0,Y]
 %  x(t0)=x0
-% con x0 en R^n, mediante el método de Adams-Bashforth utilizando el 
-% método de Euler (explícito) para inicializarlo.
+% con x0 en R^n, mediante el método de Adams-Bashforth de 2 pasos
+% utilizando el método de Euler (explícito) para inicializarlo.
 %
 % ENTRADA:
 %  f: nombre de la función (definida en formato anónimo o como fichero de
